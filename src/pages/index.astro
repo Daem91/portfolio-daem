@@ -1,13 +1,10 @@
 ---
-import { resolveLang } from "../i18n";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
-
-const lang = resolveLang();
-const messages = await import(`../i18n/${lang}.json`);
+import AppWrapper from "../components/app/AppWrapper";
+import es from "../i18n/es.json";
 ---
 
-<BaseLayout title={messages.meta.siteName}>
-  <h1>Bienvenido a mi portfolio</h1>
-  <p>Explora mis proyectos y habilidades.</p>
+<BaseLayout lang="es" title={es.meta.siteName}>
+  <AppWrapper client:load currentPath={Astro.url.pathname} />
 </BaseLayout>

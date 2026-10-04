@@ -12,6 +12,24 @@
     "cta": "Entrar al portafolio"
   },
   "navbar": {
+    "links": [
+      {
+        "href": "#experience",
+        "label": "Experiencia"
+      },
+      {
+        "href": "#projects",
+        "label": "Proyectos"
+      },
+      {
+        "href": "#education",
+        "label": "Estudios"
+      },
+      {
+        "href": "#contact",
+        "label": "Contacto"
+      }
+    ],
     "home": "Inicio",
     "experience": "Experiencia",
     "projects": "Proyectos",

@@ -1,13 +1,7 @@
 ---
-import { resolveLang } from "../i18n";
 import "../styles/global.css";
 
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
-const lang = resolveLang();
+const { lang, title } = Astro.props;
 ---
 
 <html lang={lang}>
