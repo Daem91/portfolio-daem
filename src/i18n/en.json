@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "siteName": "Camila | Portfolio",
+    "role": "Frontend & Full Stack Developer",
+    "locale": "en-US",
+    "cvFileName": "CV_Camila_Andrea_Rivera.pdf",
+    "cvUpdatedAt": "Updated in October 2026"
+  },
+  "intro": {
+    "greeting": "Camila Andrea Rivera",
+    "subtitle": "Frontend & Full Stack Developer",
+    "cta": "Enter portfolio"
+  },
+  "navbar": {
+    "home": "Home",
+    "experience": "Experience",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact",
+    "downloadCv": "Download CV",
+    "language": "Language",
+    "theme": "Theme",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode"
+  },
+  "hero": {
+    "greeting": "Hi, I’m Camila 👋",
+    "title": "Frontend & Full Stack Developer",
+    "description": "I build thoughtful, functional web and mobile interfaces with attention to detail. I enjoy creating digital products that are useful, beautiful and easy to use.",
+    "location": "Trujillo, Peru",
+    "openToWork": "Open to work",
+    "available": "Available for work",
+    "primaryCta": "View projects",
+    "secondaryCta": "Download CV",
+    "techStackLabel": "Main technologies",
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Flutter",
+      "Fastify",
+      "PostgreSQL",
+      "Tailwind CSS"
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Where I’ve worked and what I’ve built",
+    "items": [
+      {
+        "company": "Kole.pe",
+        "role": "Web and mobile design, development and support",
+        "period": "Apr. 2026 — Sep. 2026",
+        "summary": "I contributed to the design, development and support of web and mobile solutions for the company.",
+        "responsibilities": [
+          "Development and maintenance of web interfaces.",
+          "Digital product support and improvements.",
+          "Collaboration on web and mobile features."
+        ],
+        "technologies": [
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Mobile development"
+        ]
+      },
+      {
+        "company": "CorAll Development and Research S.A.C.",
+        "role": "Full Stack Developer — Web & Mobile",
+        "period": "3 years of experience",
+        "summary": "Development of applications and digital solutions across frontend, backend and mobile.",
+        "responsibilities": [
+          "Frontend and backend development.",
+          "API and database integration.",
+          "Mobile development and product maintenance."
+        ],
+        "technologies": [
+          "React",
+          "Fastify",
+          "Prisma",
+          "PostgreSQL",
+          "Flutter"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A selection of products and solutions I’ve worked on",
+    "filters": {
+      "all": "All",
+      "web": "Web",
+      "ecommerce": "E-commerce",
+      "mobile": "Mobile",
+      "backend": "Backend / APIs",
+      "uiux": "UI/UX",
+      "client": "Client",
+      "personal": "Personal"
+    },
+    "labels": {
+      "viewProject": "View case study",
+      "company": "Company / client",
+      "role": "My role",
+      "year": "Year",
+      "type": "Project type",
+      "problem": "The problem",
+      "solution": "The solution",
+      "myRole": "My role and responsibilities",
+      "features": "Key features",
+      "gallery": "Gallery",
+      "technologies": "Technologies",
+      "links": "Links",
+      "demo": "View demo",
+      "repository": "View repository",
+      "figma": "View Figma",
+      "close": "Close"
+    },
+    "empty": "There are no projects in this category yet."
+  },
+  "education": {
+    "title": "Education, certificates and CV",
+    "subtitle": "Academic background, continuous learning and professional experience",
+    "educationTitle": "Education",
+    "degree": "Bachelor’s degree in Computer Engineering and Systems",
+    "university": "Universidad Privada Antenor Orrego",
+    "period": "2019 — 2023",
+    "certificatesTitle": "Certificates",
+    "certificates": [
+      {
+        "name": "Work Competency Standards No. 1, 3 and 4 in Software Development",
+        "institution": "CITEccal Trujillo",
+        "year": "2025"
+      },
+      {
+        "name": "Frontend Developer Course",
+        "institution": "Platzi",
+        "year": "2023"
+      },
+      {
+        "name": "Website Creation with Astro Course",
+        "institution": "Platzi",
+        "year": "2023"
+      }
+    ],
+    "cvTitle": "Download CV",
+    "cvDescription": "Explore my experience, education and technical skills in detail.",
+    "cvButton": "Download PDF",
+    "cvUpdated": "CV updated in October 2026"
+  },
+  "contact": {
+    "title": "Let’s work together",
+    "subtitle": "I’m available for job opportunities, freelance projects and collaborations.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email",
+      "emailPlaceholder": "youremail@example.com",
+      "projectType": "Project type",
+      "projectTypeOptions": {
+        "web": "Web development",
+        "mobile": "Mobile development",
+        "ecommerce": "E-commerce",
+        "uiux": "UI/UX design",
+        "other": "Other"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project or opportunity",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "success": "Message sent! Thank you for reaching out ✨",
+      "error": "There was an error sending your message. Please email me directly."
+    },
+    "direct": {
+      "title": "Direct contact",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "copyEmail": "Copy email",
+      "copied": "Email copied!"
+    },
+    "responseTime": "I usually reply within 24–48 hours."
+  },
+  "footer": {
+    "name": "Camila Andrea Rivera",
+    "role": "Frontend & Full Stack Developer",
+    "navigation": "Navigation",
+    "social": "Social",
+    "rights": "© 2026 Camila Andrea Rivera. All rights reserved.",
+    "madeWith": "Made with ☕, code and cats"
+  }
+}

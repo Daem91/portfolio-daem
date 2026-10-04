@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "siteName": "Camila | Portafolio",
+    "role": "Desarrolladora Frontend & Full Stack",
+    "locale": "es-PE",
+    "cvFileName": "CV_Camila_Andrea_Rivera.pdf",
+    "cvUpdatedAt": "Actualizado en octubre de 2026"
+  },
+  "intro": {
+    "greeting": "Camila Andrea Rivera",
+    "subtitle": "Frontend & Full Stack Developer",
+    "cta": "Entrar al portafolio"
+  },
+  "navbar": {
+    "home": "Inicio",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "education": "Educación",
+    "contact": "Contacto",
+    "downloadCv": "Descargar CV",
+    "language": "Idioma",
+    "theme": "Tema",
+    "lightMode": "Modo claro",
+    "darkMode": "Modo oscuro"
+  },
+  "hero": {
+    "greeting": "Hola, soy Camila 👋",
+    "title": "Desarrolladora Frontend & Full Stack",
+    "description": "Creo interfaces web y móviles cuidadas, funcionales y con atención al detalle. Me interesa construir productos digitales que sean útiles, bonitos y fáciles de usar.",
+    "location": "Trujillo, Perú",
+    "openToWork": "Open to work",
+    "available": "Disponible para trabajar",
+    "primaryCta": "Ver proyectos",
+    "secondaryCta": "Descargar CV",
+    "techStackLabel": "Tecnologías principales",
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Flutter",
+      "Fastify",
+      "PostgreSQL",
+      "Tailwind CSS"
+    ]
+  },
+  "experience": {
+    "title": "Experiencia",
+    "subtitle": "Donde he trabajado y qué he construido",
+    "items": [
+      {
+        "company": "Kole.pe",
+        "role": "Diseño, desarrollo y soporte web y móvil",
+        "period": "Abr. 2026 — Set. 2026",
+        "summary": "Participé en el diseño, desarrollo y soporte de soluciones web y móviles para la empresa.",
+        "responsibilities": [
+          "Desarrollo y mantenimiento de interfaces web.",
+          "Soporte y mejoras de producto digital.",
+          "Colaboración en funcionalidades web y móviles."
+        ],
+        "technologies": [
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Desarrollo móvil"
+        ]
+      },
+      {
+        "company": "CorAll Development and Research S.A.C.",
+        "role": "Desarrolladora Full Stack — Web & Mobile",
+        "period": "3 años de experiencia",
+        "summary": "Desarrollo de aplicaciones y soluciones digitales en frontend, backend y mobile.",
+        "responsibilities": [
+          "Desarrollo frontend y backend.",
+          "Integración de APIs y bases de datos.",
+          "Desarrollo móvil y mantenimiento de productos."
+        ],
+        "technologies": [
+          "React",
+          "Fastify",
+          "Prisma",
+          "PostgreSQL",
+          "Flutter"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Una selección de productos y soluciones en las que he trabajado",
+    "filters": {
+      "all": "Todos",
+      "web": "Web",
+      "ecommerce": "E-commerce",
+      "mobile": "Mobile",
+      "backend": "Backend / APIs",
+      "uiux": "UI/UX",
+      "client": "Cliente",
+      "personal": "Personal"
+    },
+    "labels": {
+      "viewProject": "Ver caso completo",
+      "company": "Empresa / cliente",
+      "role": "Mi rol",
+      "year": "Año",
+      "type": "Tipo de proyecto",
+      "problem": "El problema",
+      "solution": "La solución",
+      "myRole": "Mi rol y responsabilidades",
+      "features": "Funcionalidades clave",
+      "gallery": "Galería",
+      "technologies": "Tecnologías",
+      "links": "Enlaces",
+      "demo": "Ver demo",
+      "repository": "Ver repositorio",
+      "figma": "Ver Figma",
+      "close": "Cerrar"
+    },
+    "empty": "Todavía no hay proyectos en esta categoría."
+  },
+  "education": {
+    "title": "Educación, certificados y CV",
+    "subtitle": "Formación académica, aprendizaje continuo y experiencia profesional",
+    "educationTitle": "Educación",
+    "degree": "Ingeniería de Computación y Sistemas",
+    "university": "Universidad Privada Antenor Orrego",
+    "period": "2019 — 2023",
+    "certificatesTitle": "Certificados",
+    "certificates": [
+      {
+        "name": "Estándares de Competencia Laboral N.° 1, 3 y 4 en Desarrollo de Software",
+        "institution": "CITEccal Trujillo",
+        "year": "2025"
+      },
+      {
+        "name": "Curso de Frontend Developer",
+        "institution": "Platzi",
+        "year": "2023"
+      },
+      {
+        "name": "Curso de Creación de Páginas Web con Astro",
+        "institution": "Platzi",
+        "year": "2023"
+      }
+    ],
+    "cvTitle": "Descargar CV",
+    "cvDescription": "Conoce mi experiencia, formación y habilidades técnicas en detalle.",
+    "cvButton": "Descargar PDF",
+    "cvUpdated": "CV actualizado en octubre de 2026"
+  },
+  "contact": {
+    "title": "¿Trabajamos juntos?",
+    "subtitle": "Estoy disponible para oportunidades laborales, proyectos freelance y colaboraciones.",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Escribe tu nombre",
+      "email": "Email",
+      "emailPlaceholder": "tuemail@ejemplo.com",
+      "projectType": "Tipo de proyecto",
+      "projectTypeOptions": {
+        "web": "Desarrollo web",
+        "mobile": "Desarrollo móvil",
+        "ecommerce": "E-commerce",
+        "uiux": "Diseño UI/UX",
+        "other": "Otro"
+      },
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto o oportunidad",
+      "submit": "Enviar mensaje",
+      "sending": "Enviando…",
+      "success": "¡Mensaje enviado! Gracias por escribirme ✨",
+      "error": "Hubo un error al enviar el mensaje. Escríbeme directamente por email."
+    },
+    "direct": {
+      "title": "Contacto directo",
+      "email": "Email",
+      "phone": "Teléfono",
+      "location": "Ubicación",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "copyEmail": "Copiar email",
+      "copied": "¡Email copiado!"
+    },
+    "responseTime": "Normalmente respondo en 24–48 horas."
+  },
+  "footer": {
+    "name": "Camila Andrea Rivera",
+    "role": "Frontend & Full Stack Developer",
+    "navigation": "Navegación",
+    "social": "Redes",
+    "rights": "© 2026 Camila Andrea Rivera. Todos los derechos reservados.",
+    "madeWith": "Hecho con ☕, código y gatos"
+  }
+}
