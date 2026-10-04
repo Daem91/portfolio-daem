@@ -48,13 +48,14 @@
     "location": "Trujillo, Peru",
     "openToWork": "Open to work",
     "available": "Available for work",
+    "moveToOtherCities": "I can relocate if necessary",
     "primaryCta": "View projects",
     "secondaryCta": "Download CV",
     "techStackLabel": "Main technologies",
     "techStack": [
       "React",
       "TypeScript",
-      "Flutter",
+      "Astro",
       "Fastify",
       "PostgreSQL",
       "Tailwind CSS"
@@ -77,6 +78,7 @@
         "technologies": [
           "React",
           "TypeScript",
+          "Astro",
           "Tailwind CSS",
           "Mobile development"
         ]

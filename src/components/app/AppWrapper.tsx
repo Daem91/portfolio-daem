@@ -3,6 +3,7 @@ import en from "../../i18n/en.json";
 import { resolveLang, saveLang } from "../../i18n";
 import { useEffect, useMemo, useState } from "react";
 import { Header } from "../Header";
+import { Hero } from "../Hero";
 
 const dictionaries = { es, en };
 type Language = keyof typeof dictionaries;
@@ -25,6 +26,7 @@ export default function PortfolioApp({ currentPath }: { currentPath: string }) {
   return (
     <>
       <Header links={messages.navbar.links} currentPath={currentPath} lang={lang} onLanguageChange={handleChangeLanguage} />
+      <Hero messages={messages.hero} />
     </>
   );
 }

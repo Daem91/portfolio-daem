@@ -42,19 +42,20 @@
     "darkMode": "Modo oscuro"
   },
   "hero": {
-    "greeting": "Hola, soy Camila 👋",
+    "greeting": "¡Oh! Hola, soy Camila 👋",
     "title": "Desarrolladora Frontend & Full Stack",
-    "description": "Creo interfaces web y móviles cuidadas, funcionales y con atención al detalle. Me interesa construir productos digitales que sean útiles, bonitos y fáciles de usar.",
+    "description": "Creo interfaces web y móviles funcionales y con atención al detalle y el cliente. Me gusta construir productos digitales que sean útiles, bonitos y fáciles de usar.",
     "location": "Trujillo, Perú",
     "openToWork": "Open to work",
     "available": "Disponible para trabajar",
+    "moveToOtherCities": "Puedo mudarme si es necesario",
     "primaryCta": "Ver proyectos",
     "secondaryCta": "Descargar CV",
     "techStackLabel": "Tecnologías principales",
     "techStack": [
       "React",
       "TypeScript",
-      "Flutter",
+      "Astro",
       "Fastify",
       "PostgreSQL",
       "Tailwind CSS"
@@ -77,6 +78,7 @@
         "technologies": [
           "React",
           "TypeScript",
+          "Astro",
           "Tailwind CSS",
           "Desarrollo móvil"
         ]

@@ -131,9 +131,9 @@ export function Header(props: HeaderProps) {
   return (
     <header
       ref={headerRef}
-      className={`sticky top-0 z-50 w-full border-b text-dark
-        transition-[padding,background-color,border-color,box-shadow] duration-300 ease-in-out
-        ${isScrolled ? "bg-white/70 px-4 py-3 shadow-sm backdrop-blur-md sm:px-8 sm:py-4 lg:px-12 xl:px-40" : "border-transparent bg-transparent px-4 py-4 sm:px-8 sm:py-6 lg:px-12 lg:py-8 xl:px-40"}`}
+      className={`sticky border-none bg-transparent top-0 z-50 w-full border-b text-text dark:text-cream
+        transition-[padding,border-color,box-shadow] duration-300 ease-in-out
+        ${isScrolled ? "bg-transparent px-4 py-3 shadow-sm backdrop-blur-md sm:px-8 sm:py-4 lg:px-16 xl:px-48" : "border-transparent bg-transparent px-4 py-4 sm:px-8 sm:py-6 lg:px-16 xl:px-48"}`}
     >
       <div className="container flex w-full items-center justify-between gap-3">
         <div className="flex min-w-0 items-center gap-3 md:gap-5">
@@ -148,58 +148,58 @@ export function Header(props: HeaderProps) {
                   : "invisible -translate-y-1 opacity-0 md:visible md:translate-y-0 md:opacity-100"
               }`}
             >
-            <ul
-              ref={navListRef}
-              onMouseLeave={() => setHoveredLink(null)}
-              onBlur={(event) => {
-                if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-                  setHoveredLink(null);
-                }
-              }}
-              className="relative isolate m-0 flex list-none flex-col items-stretch gap-1 p-0 uppercase font-semibold tracking-wide md:flex-row md:items-center"
-            >
-              <span
-                aria-hidden="true"
-                className={`pointer-events-none absolute inset-y-0 rounded-full bg-accent shadow-sm transition-[left,width,opacity] duration-300 ease-out ${
-                  displayedLink ? "opacity-100" : "opacity-0"
-                }`}
-                style={{
-                  left: indicator.left,
-                  width: indicator.width,
-                  top: indicator.top,
-                  height: indicator.height,
+              <ul
+                ref={navListRef}
+                onMouseLeave={() => setHoveredLink(null)}
+                onBlur={(event) => {
+                  if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                    setHoveredLink(null);
+                  }
                 }}
-              />
-              {links.map((link: HeaderLink) => (
-                <li
-                  key={link.href}
-                  className="w-full md:w-auto"
-                  ref={(node) => {
-                    if (node) {
-                      linkItemRefs.current.set(link.href, node);
-                    } else {
-                      linkItemRefs.current.delete(link.href);
-                    }
+                className="relative isolate m-0 flex list-none flex-col items-stretch gap-1 p-0 uppercase font-semibold tracking-wide md:flex-row md:items-center"
+              >
+                <span
+                  aria-hidden="true"
+                  className={`pointer-events-none absolute inset-y-0 rounded-full bg-accent shadow-sm transition-[left,width,opacity] duration-300 ease-out ${
+                    displayedLink ? "opacity-100" : "opacity-0"
+                  }`}
+                  style={{
+                    left: indicator.left,
+                    width: indicator.width,
+                    top: indicator.top,
+                    height: indicator.height,
                   }}
-                >
-                  <a
-                    href={link.href}
-                    aria-current={activeLink === link.href ? "location" : undefined}
-                    onMouseEnter={() => setHoveredLink(link.href)}
-                    onFocus={() => setHoveredLink(link.href)}
-                    onClick={() => {
-                      setActiveLink(link.href);
-                      setIsMenuOpen(false);
+                />
+                {links.map((link: HeaderLink) => (
+                  <li
+                    key={link.href}
+                    className="w-full md:w-auto"
+                    ref={(node) => {
+                      if (node) {
+                        linkItemRefs.current.set(link.href, node);
+                      } else {
+                        linkItemRefs.current.delete(link.href);
+                      }
                     }}
-                    className={`relative z-10 block rounded-xl px-4 py-3 text-sm no-underline transition-colors duration-200 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent md:rounded-full md:px-3 md:py-2 ${
-                      displayedLink === link.href ? "text-cream" : "text-text hover:text-accent"
-                    }`}
                   >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+                    <a
+                      href={link.href}
+                      aria-current={activeLink === link.href ? "location" : undefined}
+                      onMouseEnter={() => setHoveredLink(link.href)}
+                      onFocus={() => setHoveredLink(link.href)}
+                      onClick={() => {
+                        setActiveLink(link.href);
+                        setIsMenuOpen(false);
+                      }}
+                      className={`relative z-10 block rounded-xl px-4 py-3 text-sm no-underline transition-colors duration-200 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent md:rounded-full md:px-3 md:py-2 ${
+                        displayedLink === link.href ? "text-cream" : "text-text hover:text-accent"
+                      }`}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </nav>
           )}
         </div>
@@ -215,10 +215,7 @@ export function Header(props: HeaderProps) {
               onClick={() => setIsMenuOpen((open) => !open)}
               className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-border bg-surface text-text transition-colors hover:bg-surface-alt hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:hidden"
             >
-              <i
-                className={`fa-solid ${isMenuOpen ? "fa-xmark" : "fa-bars"} text-sm`}
-                aria-hidden="true"
-              />
+              <i className={`fa-solid ${isMenuOpen ? "fa-xmark" : "fa-bars"} text-sm`} aria-hidden="true" />
             </button>
           )}
         </div>
