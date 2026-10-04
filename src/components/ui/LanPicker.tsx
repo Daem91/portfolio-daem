@@ -62,12 +62,12 @@ export function LanPicker({ lang, onLanguageChange }: LanPickerProps) {
         aria-controls={menuId}
         aria-label="Seleccionar idioma"
         onClick={() => setIsOpen((open) => !open)}
-        className="flex cursor-pointer items-center gap-2 text-sm font-semibold uppercase tracking-wide text-text transition-colors duration-100"
+        className="flex cursor-pointer items-center gap-1.5 rounded-full border border-border bg-surface/80 px-2.5 py-2.5 text-xs font-semibold uppercase tracking-wide text-text transition-colors duration-150 hover:border-accent/30 hover:bg-surface-alt hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:gap-2 sm:px-4 sm:py-3.5 sm:text-sm"
       >
         {selectedLang === "es" ? "Español" : "English"}
         <FlagIcon code={selectedLang} className="h-4.5 w-4.5 rounded-full" />
         <i
-          className={`fa-solid fa-chevron-down text-[0.625rem] transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+          className={`fa-solid text-text fa-chevron-down text-[0.625rem] transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
           aria-hidden="true"
         />
       </button>
@@ -75,7 +75,7 @@ export function LanPicker({ lang, onLanguageChange }: LanPickerProps) {
         id={menuId}
         role="listbox"
         aria-activedescendant={selectedLang}
-        className={`absolute right-0 z-10 mt-1 w-max origin-top-right rounded-lg border border-border bg-background py-1 text-sm font-semibold uppercase tracking-wide text-text shadow-lg transition-all duration-200 ${
+        className={`absolute right-0 z-10 mt-2 min-w-40 origin-top-right rounded-xl border border-border bg-surface p-1.5 text-sm font-semibold uppercase tracking-wide text-text shadow-lg transition-all duration-200 ${
           isOpen ? "scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0"
         }`}
       >
@@ -86,10 +86,15 @@ export function LanPicker({ lang, onLanguageChange }: LanPickerProps) {
             aria-label="Español"
             aria-selected={selectedLang === "es"}
             onClick={() => selectLang("es")}
-            className={`flex cursor-pointer items-center gap-2 px-3 py-1.5 hover:bg-accent/20 ${selectedLang === "es" ? "bg-accent/20 font-semibold" : "hover:bg-black/5"}`}
+            className={`flex w-full cursor-pointer items-center justify-between gap-4 rounded-lg px-3 py-2.5 text-left transition-colors duration-150 hover:bg-surface-alt focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent ${
+              selectedLang === "es" ? "text-accent" : "text-text"
+            }`}
           >
-            ESPAÑOL
-            <FlagIcon code="es" className="h-4.5 w-4.5 rounded-full" />
+            <span className="flex items-center gap-2.5">
+              ESPAÑOL
+              <FlagIcon code="es" className="h-4.5 w-4.5 rounded-full" />
+            </span>
+            {selectedLang === "es" && <i className="fa-solid fa-check text-xs" aria-hidden="true" />}
           </button>
         </li>
         <li id="en" role="option">
@@ -99,10 +104,15 @@ export function LanPicker({ lang, onLanguageChange }: LanPickerProps) {
             aria-label="English"
             aria-selected={selectedLang === "en"}
             onClick={() => selectLang("en")}
-            className={`flex cursor-pointer items-center gap-2 px-3 py-1.5 hover:bg-accent/20 ${selectedLang === "en" ? "bg-accent/20 font-semibold" : "hover:bg-black/5"}`}
+            className={`flex w-full cursor-pointer items-center justify-between gap-4 rounded-lg px-3 py-2.5 text-left transition-colors duration-150 hover:bg-surface-alt focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent ${
+              selectedLang === "en" ? "text-accent" : "text-text"
+            }`}
           >
-            ENGLISH
-            <FlagIcon code="en" className="h-4.5 w-4.5 rounded-full" />
+            <span className="flex items-center gap-2.5">
+              ENGLISH
+              <FlagIcon code="en" className="h-4.5 w-4.5 rounded-full" />
+            </span>
+            {selectedLang === "en" && <i className="fa-solid fa-check text-xs" aria-hidden="true" />}
           </button>
         </li>
       </ul>
