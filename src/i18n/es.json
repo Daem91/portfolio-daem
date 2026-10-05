@@ -47,7 +47,7 @@
     "description": "Creo interfaces web y móviles funcionales y con atención al detalle y el cliente. Me gusta construir productos digitales que sean útiles, bonitos y fáciles de usar.",
     "location": "Trujillo, Perú",
     "openToWork": "Open to work",
-    "available": "Disponible para trabajar",
+    "available": "Disponible",
     "moveToOtherCities": "Puedo mudarme si es necesario",
     "primaryCta": "Ver proyectos",
     "secondaryCta": "Descargar CV",
@@ -133,6 +133,7 @@
       "repository": "Ver repositorio",
       "figma": "Ver Figma",
       "inProgress": "En construcción",
+      "viewFullImage": "Ver imagen completa",
       "visitLink": "Visitar proyecto",
       "close": "Cerrar"
     },
@@ -244,7 +245,7 @@
         "estado": "completed",
         "title":"Página Web de Portafolio de Proyectos Urban Tech Innovation",
         "company":"Urban Tech Innovation",
-        "image":"/images/urban-tech.webp",
+        "image":"/images/urbantech.webp",
         "role":"Desarrolladora Frontend",
         "period":"2025",
         "summary":"Desarrollo de una página web para mostrar el portafolio de proyectos de Urban Tech Innovation, una empresa de arquitectura.",
@@ -268,7 +269,7 @@
       },
       {
         "id":"personal-portfolio",
-        "estado": "completed",
+        "estado": "in-progress",
         "title":"Portafolio Personal",
         "company":"Camila Rivera",
         "image":"/images/personal-portfolio.webp",
@@ -296,7 +297,7 @@
         "estado": "completed",
         "title":"Página Corporativa Totem Multimedia",
         "company":"Totem Multimedia",
-        "image":"/images/totem-corporate.webp",
+        "image":"/images/totemultimedia.webp",
         "role":"Desarrolladora Frontend",
         "period":"2026",
         "summary":"Participé en el rediseño y prototipado de la página corporativa de Totem Multimedia",
@@ -321,7 +322,7 @@
         "estado": "completed",
         "title":"Página de Evento APROH PERÚ 2026",
         "company":"APROH PERÚ",
-        "image":"/images/aproh-peru.webp",
+        "image":"/images/aprohperu.webp",
         "role":"Desarrolladora Frontend",
         "period":"2026",
         "summary":"Participé en el desarrollo de la landing page del evento APROH PERú 2026",
@@ -464,6 +465,7 @@
         "id": "leevon-ecommerce",
         "estado": "in-progress",
         "title": "Leevon E-commerce en construcción",
+        "image":"/images/leevon.webp",
         "company": "Proyecto personal",
         "role": "Desarrolladora Full Stack",
         "period": "2026",
@@ -555,10 +557,19 @@
     "responseTime": "Normalmente respondo en 12-24 horas."
   },
   "footer": {
-    "name": "Camila Andrea Rivera",
+    "name": "Camila A. Rivera",
     "role": "Frontend & Full Stack Developer",
     "navigation": "Navegación",
-    "social": "Redes",
+    "social": "Mis Redes",
+    "navigationLinks": [
+      { "label": "Inicio", "href": "#home" },
+      { "label": "Proyectos", "href": "#projects" },
+      { "label": "Descargar CV", "href": "/cv/cv_camila_andrea_rivera.pdf", "download": true }
+    ],
+    "socialLinks": [
+      { "label": "GitHub", "href": "https://github.com/Daem91", "icon": "fa-brands fa-github" },
+      { "label": "Email", "href": "mailto:camila.arc91@gmail.com", "icon": "fa-solid fa-envelope" }
+    ],
     "rights": "© 2026 Camila Rivera. Todos los derechos reservados.",
     "madeWith": "Hecho con ☕, código y gatos"
   }

@@ -99,6 +99,24 @@
   .pulse-dot {
     animation: pulse-dot 1.8s ease-in-out infinite;
   }
+
+  @keyframes hero-cloud-drift {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, -8px, 0);
+    }
+  }
+
+  .hero-cloud-drift {
+    animation: hero-cloud-drift 6s ease-in-out infinite;
+  }
+
+  .hero-cloud-drift-reverse {
+    animation: hero-cloud-drift 7s ease-in-out -3.5s infinite reverse;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

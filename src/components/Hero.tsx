@@ -81,26 +81,28 @@ export function Hero({ messages }: { messages: HeroMessages }) {
             />
             <i
               aria-hidden="true"
-              className="fa-solid fa-cloud absolute left-[-7%] top-[18%] z-20 text-5xl text-white/75 drop-shadow-sm dark:text-white/15 sm:text-6xl"
+              className="hero-cloud-drift fa-solid fa-cloud absolute left-[-7%] top-[18%] z-20 text-5xl text-white/75 drop-shadow-sm dark:text-white/15 sm:text-6xl"
             />
             <i
               aria-hidden="true"
-              className="fa-solid fa-cloud absolute right-[-8%] bottom-[15%] z-20 text-6xl text-white/80 drop-shadow-sm dark:text-white/15 sm:text-7xl"
+              className="hero-cloud-drift-reverse fa-solid fa-cloud absolute right-[-8%] bottom-[15%] z-20 text-6xl text-white/80 drop-shadow-sm dark:text-white/15 sm:text-7xl"
             />
             <div className="absolute inset-[5%] rounded-full border border-white/70 bg-white/25 shadow-[inset_8px_8px_24px_rgb(255_255_255/0.55),0_20px_60px_rgb(110_30_43/0.12)] backdrop-blur-sm dark:border-white/10 dark:bg-white/3 dark:shadow-[inset_8px_8px_24px_rgb(255_255_255/0.04),0_20px_60px_rgb(0_0_0/0.2)]" />
             <div className="relative aspect-square w-[82%] overflow-hidden rounded-full border-[6px] border-white/80 bg-[#f7e6d6] shadow-[0_18px_55px_rgb(110_30_43/0.18)] dark:border-white/10">
               <PortraitIllustration />
             </div>
-            <div className="absolute -bottom-1 right-0 z-30 flex max-w-60 items-center gap-3 rounded-image border border-white/80 bg-surface/90 px-4 py-3 shadow-[0_12px_32px_rgb(110_30_43/0.14)] backdrop-blur-md dark:border-white/10 sm:right-[-4%]">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-accent/10 text-accent">
-                <i className="fa-solid fa-cloud" aria-hidden="true" />
-              </span>
-              <span className="min-w-0">
-                <span className="block text-[0.625rem] font-bold uppercase tracking-[0.16em] text-text-secondary">{messages.openToWork}</span>
-                <span className="mt-1 flex items-center gap-2 text-xs font-semibold text-text sm:text-sm">
-                  <span className="pulse-dot h-2 w-2 shrink-0 rounded-full bg-available" aria-hidden="true" />
-                  {messages.available}
-                </span>
+            <div className="absolute right-0 top-[12%] z-30 rounded-[1.5rem] border border-white/70 bg-surface/55 px-5 py-3 shadow-[0_12px_32px_rgb(110_30_43/0.10)] backdrop-blur-lg dark:border-white/10 dark:bg-surface/45 sm:right-[-4%]">
+              <span
+                aria-hidden="true"
+                className="absolute -bottom-3 left-11 h-6 w-6 rounded-full border border-white/60 bg-surface/55 backdrop-blur-lg dark:border-white/10 dark:bg-surface/45"
+              />
+              <span
+                aria-hidden="true"
+                className="absolute -bottom-7 left-9 h-3.5 w-3.5 rounded-full border border-white/50 bg-surface/55 backdrop-blur-lg dark:border-white/10 dark:bg-surface/45"
+              />
+              <span className="relative flex items-center gap-2.5 whitespace-nowrap text-sm font-semibold text-text">
+                <span className="pulse-dot h-2.5 w-2.5 shrink-0 rounded-full bg-available" aria-hidden="true" />
+                {messages.available}
               </span>
             </div>
           </div>

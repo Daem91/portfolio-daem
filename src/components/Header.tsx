@@ -131,9 +131,9 @@ export function Header(props: HeaderProps) {
   return (
     <header
       ref={headerRef}
-      className={`sticky border-none bg-transparent top-0 z-50 w-full border-b text-text dark:text-cream
-        transition-[padding,border-color,box-shadow] duration-300 ease-in-out
-        ${isScrolled ? "bg-transparent px-4 py-3 shadow-sm backdrop-blur-md sm:px-8 sm:py-4 lg:px-16 xl:px-48" : "border-transparent bg-transparent px-4 py-4 sm:px-8 sm:py-6 lg:px-16 xl:px-48"}`}
+      className={`sticky top-0 z-50 w-full border-0 bg-transparent text-text dark:text-cream
+        transition-[padding,background-color] duration-300 ease-in-out
+        ${isScrolled ? "bg-background/80 px-4 py-3 backdrop-blur-md sm:px-8 sm:py-4 lg:px-16 xl:px-48" : "px-4 py-4 sm:px-8 sm:py-6 lg:px-16 xl:px-48"}`}
     >
       <div className="container flex w-full items-center justify-between gap-3">
         <div className="flex min-w-0 items-center gap-3 md:gap-5">

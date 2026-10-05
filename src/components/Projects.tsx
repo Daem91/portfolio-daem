@@ -33,6 +33,7 @@ interface ProjectMessages {
     myRole: string;
     technologies: string;
     inProgress: string;
+    viewFullImage: string;
     visitLink: string;
     close: string;
   };
@@ -55,10 +56,22 @@ function matchesFilter(project: Project, filter: ProjectFilter): boolean {
 export function Projects({ messages }: { messages: ProjectMessages }) {
   const [activeFilter, setActiveFilter] = useState<ProjectFilter>("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [expandedImage, setExpandedImage] = useState<{ src: string; alt: string } | null>(null);
+  const [failedProjectImages, setFailedProjectImages] = useState<Set<string>>(() => new Set());
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const imageTriggerRef = useRef<HTMLButtonElement>(null);
+  const imageCloseButtonRef = useRef<HTMLButtonElement>(null);
+  const expandedImageRef = useRef<{ src: string; alt: string } | null>(null);
+  const projectImageRefs = useRef(new Map<string, HTMLImageElement>());
   const previouslyFocusedRef = useRef<HTMLElement | null>(null);
 
   const filteredProjects = messages.items.filter((project) => matchesFilter(project, activeFilter));
+
+  function closeExpandedImage() {
+    expandedImageRef.current = null;
+    setExpandedImage(null);
+    requestAnimationFrame(() => imageTriggerRef.current?.focus());
+  }
 
   useEffect(() => {
     if (!selectedProject) return;
@@ -70,12 +83,16 @@ export function Projects({ messages }: { messages: ProjectMessages }) {
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
+        if (expandedImageRef.current) {
+          closeExpandedImage();
+          return;
+        }
         setSelectedProject(null);
         return;
       }
 
       if (event.key !== "Tab") return;
-      const dialog = document.getElementById("project-dialog");
+      const dialog = document.getElementById(expandedImageRef.current ? "project-image-dialog" : "project-dialog");
       const focusableElements = dialog?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
       if (!focusableElements?.length) return;
 
@@ -98,6 +115,17 @@ export function Projects({ messages }: { messages: ProjectMessages }) {
     };
   }, [selectedProject]);
 
+  useEffect(() => {
+    if (expandedImage) imageCloseButtonRef.current?.focus();
+  }, [expandedImage]);
+
+  useEffect(() => {
+    const failedIds = [...projectImageRefs.current].filter(([, image]) => image.complete && image.naturalWidth === 0).map(([id]) => id);
+    if (failedIds.length > 0) {
+      setFailedProjectImages((failed) => new Set([...failed, ...failedIds]));
+    }
+  }, [filteredProjects]);
+
   return (
     <section id="projects" className="scroll-mt-24 bg-background px-5 py-20 sm:px-8 lg:scroll-mt-28 lg:px-12 lg:py-28">
       <div className="container">
@@ -115,8 +143,7 @@ export function Projects({ messages }: { messages: ProjectMessages }) {
             <ul className="m-0 flex w-max list-none items-center gap-2 p-0 lg:w-full lg:flex-col lg:items-stretch lg:gap-1">
               {filterOrder.map((filter) => {
                 const isActive = activeFilter === filter;
-                const count =
-                  filter === "all" ? messages.items.length : messages.items.filter((project) => matchesFilter(project, filter)).length;
+                const count = filter === "all" ? messages.items.length : messages.items.filter((project) => matchesFilter(project, filter)).length;
 
                 return (
                   <li key={filter}>
@@ -146,13 +173,21 @@ export function Projects({ messages }: { messages: ProjectMessages }) {
                       type="button"
                       onClick={() => setSelectedProject(project)}
                       aria-label={`${messages.labels.viewProject}: ${project.title}`}
-                      className="group block h-full w-full cursor-pointer overflow-hidden rounded-card border border-border bg-surface text-left shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-accent/20 hover:shadow-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                      className="group flex h-full w-full cursor-pointer flex-col items-stretch justify-start appearance-none overflow-hidden rounded-card border border-border bg-surface p-0 text-left shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-accent/20 hover:shadow-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
                     >
-                      <div aria-hidden="true" className={`relative flex aspect-[1.55] items-center justify-center overflow-hidden ${project.theme}`}>
-                        {project.image ? (
+                      <div
+                        aria-hidden="true"
+                        className={`relative flex aspect-[1.55] w-full flex-none items-center justify-center overflow-hidden ${project.theme}`}
+                      >
+                        {project.image && !failedProjectImages.has(project.id) ? (
                           <img
+                            ref={(image) => {
+                              if (image) projectImageRefs.current.set(project.id, image);
+                              else projectImageRefs.current.delete(project.id);
+                            }}
                             src={project.image}
                             alt=""
+                            onError={() => setFailedProjectImages((failed) => new Set(failed).add(project.id))}
                             className="absolute inset-4 h-[calc(100%-2rem)] w-[calc(100%-2rem)] rounded-2xl border border-white/40 bg-white/15 object-cover shadow-[inset_0_1px_0_rgb(255_255_255/0.4)] transition-transform duration-300 group-hover:scale-[1.03]"
                           />
                         ) : (
@@ -167,14 +202,17 @@ export function Projects({ messages }: { messages: ProjectMessages }) {
                           </span>
                         )}
                         <span className="absolute bottom-4 left-4 flex flex-wrap gap-1.5">
-                          {project.categories.map(normalizeCategory).filter((category): category is ProjectCategory => category !== null).map((category) => (
-                            <span
-                              key={category}
-                              className="rounded-full border border-white/50 bg-surface/75 px-3 py-1 text-xs font-semibold text-text backdrop-blur"
-                            >
-                              {messages.filters[category]}
-                            </span>
-                          ))}
+                          {project.categories
+                            .map(normalizeCategory)
+                            .filter((category): category is ProjectCategory => category !== null)
+                            .map((category) => (
+                              <span
+                                key={category}
+                                className="rounded-full border border-white/50 bg-surface/75 px-3 py-1 text-xs font-semibold text-text backdrop-blur"
+                              >
+                                {messages.filters[category]}
+                              </span>
+                            ))}
                         </span>
                         <span className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-accent text-cream opacity-0 shadow-soft transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100 group-focus-visible:opacity-100">
                           <i className="fa-solid fa-arrow-up-right-from-square text-xs" />
@@ -188,7 +226,10 @@ export function Projects({ messages }: { messages: ProjectMessages }) {
                         {project.technologies.length > 0 && (
                           <ul aria-label={messages.labels.technologies} className="mt-5 flex flex-wrap gap-2">
                             {project.technologies.slice(0, 3).map((technology) => (
-                              <li key={technology} className="rounded-full bg-surface-alt px-2.5 py-1 text-[0.6875rem] font-medium text-text-secondary">
+                              <li
+                                key={technology}
+                                className="rounded-full bg-surface-alt px-2.5 py-1 text-[0.6875rem] font-medium text-text-secondary"
+                              >
                                 {technology}
                               </li>
                             ))}
@@ -235,18 +276,41 @@ export function Projects({ messages }: { messages: ProjectMessages }) {
             className="relative max-h-[92svh] w-full max-w-4xl overflow-y-auto rounded-t-modal border border-border bg-background shadow-modal sm:rounded-modal"
           >
             <div
-              aria-hidden="true"
               className={`relative flex aspect-[2.2] min-h-40 items-center justify-center overflow-hidden sm:min-h-56 ${selectedProject.theme}`}
             >
-              <span className="flex h-20 w-20 items-center justify-center rounded-3xl border border-white/50 bg-white/60 text-4xl text-accent shadow-soft backdrop-blur">
-                <i className={selectedProject.icon ?? "fa-solid fa-window-maximize"} />
-              </span>
+              {selectedProject.image && !failedProjectImages.has(selectedProject.id) ? (
+                <button
+                  ref={imageTriggerRef}
+                  type="button"
+                  aria-label={`${messages.labels.viewFullImage}: ${selectedProject.title}`}
+                  onClick={() => {
+                    const imageSrc = selectedProject.image;
+                    if (!imageSrc) return;
+                    const image = { src: imageSrc, alt: selectedProject.title };
+                    expandedImageRef.current = image;
+                    setExpandedImage(image);
+                  }}
+                  className="absolute inset-0 z-0 flex h-full w-full cursor-zoom-in items-center justify-center focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-accent"
+                >
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    onError={() => setFailedProjectImages((failed) => new Set(failed).add(selectedProject.id))}
+                    className="h-full w-full object-cover"
+                  />
+                </button>
+              ) : (
+                <span className="flex h-20 w-20 items-center justify-center rounded-3xl border border-white/50 bg-white/60 text-4xl text-accent shadow-soft backdrop-blur">
+                  <i className={selectedProject.icon ?? "fa-solid fa-window-maximize"} />
+                </span>
+              )}
+
               <button
                 ref={closeButtonRef}
                 type="button"
                 aria-label={messages.labels.close}
                 onClick={() => setSelectedProject(null)}
-                className="absolute right-4 top-4 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/60 bg-surface/85 text-text shadow-sm backdrop-blur transition-colors hover:bg-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                className="absolute right-4 top-4 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/60 bg-surface/85 text-text shadow-sm backdrop-blur transition-colors hover:bg-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 <i className="fa-solid fa-xmark" aria-hidden="true" />
               </button>
@@ -261,11 +325,14 @@ export function Projects({ messages }: { messages: ProjectMessages }) {
                       {messages.labels.inProgress}
                     </span>
                   )}
-                  {selectedProject.categories.map(normalizeCategory).filter((category): category is ProjectCategory => category !== null).map((category) => (
-                    <span key={category} className="rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
-                      {messages.filters[category]}
-                    </span>
-                  ))}
+                  {selectedProject.categories
+                    .map(normalizeCategory)
+                    .filter((category): category is ProjectCategory => category !== null)
+                    .map((category) => (
+                      <span key={category} className="rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
+                        {messages.filters[category]}
+                      </span>
+                    ))}
                 </div>
                 <h2 id="project-dialog-title" className="text-h2 font-bold tracking-tight text-text">
                   {selectedProject.title}
@@ -310,7 +377,10 @@ export function Projects({ messages }: { messages: ProjectMessages }) {
                   <h3 className="text-lg font-bold text-text">{messages.labels.technologies}</h3>
                   <ul className="mt-3 flex flex-wrap gap-2">
                     {selectedProject.technologies.map((technology) => (
-                      <li key={technology} className="rounded-full border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text shadow-sm">
+                      <li
+                        key={technology}
+                        className="rounded-full border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text shadow-sm"
+                      >
                         {technology}
                       </li>
                     ))}
@@ -330,6 +400,40 @@ export function Projects({ messages }: { messages: ProjectMessages }) {
                 </a>
               )}
             </div>
+          </section>
+        </div>
+      )}
+
+      {expandedImage && (
+        <div
+          className="fixed inset-0 z-110 flex items-center justify-center bg-ink/90 p-4 backdrop-blur-md sm:p-8"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              closeExpandedImage();
+            }
+          }}
+        >
+          <section
+            id="project-image-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${messages.labels.viewFullImage}: ${expandedImage.alt}`}
+            className="relative flex max-h-full max-w-full items-center justify-center"
+          >
+            <img
+              src={expandedImage.src}
+              alt={expandedImage.alt}
+              className="max-h-[88svh] max-w-full rounded-lg object-contain shadow-modal"
+            />
+            <button
+              ref={imageCloseButtonRef}
+              type="button"
+              aria-label={messages.labels.close}
+              onClick={closeExpandedImage}
+              className="absolute -right-2 -top-2 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/30 bg-surface text-text shadow-soft transition-colors hover:bg-surface-alt focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream sm:-right-4 sm:-top-4"
+            >
+              <i className="fa-solid fa-xmark" aria-hidden="true" />
+            </button>
           </section>
         </div>
       )}

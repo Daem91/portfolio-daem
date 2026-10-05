@@ -47,7 +47,7 @@
     "description": "I build thoughtful, functional web and mobile interfaces with attention to detail. I enjoy creating digital products that are useful, beautiful and easy to use.",
     "location": "Trujillo, Peru",
     "openToWork": "Open to work",
-    "available": "Available for work",
+    "available": "Available",
     "moveToOtherCities": "I can relocate if necessary",
     "primaryCta": "View projects",
     "secondaryCta": "Download CV",
@@ -133,6 +133,7 @@
       "repository": "View repository",
       "figma": "View Figma",
       "inProgress": "In progress",
+      "viewFullImage": "View full image",
       "visitLink": "Visit project",
       "close": "Close"
     },
@@ -242,7 +243,7 @@
       },
       {
         "id": "personal-portfolio",
-        "estado": "completed",
+        "estado": "in-progress",
         "title": "Personal Portfolio",
         "company": "Camila Rivera",
         "image": "/images/personal-portfolio.webp",
@@ -263,7 +264,7 @@
         "estado": "completed",
         "title": "Totem Multimedia Corporate Website",
         "company": "Totem Multimedia",
-        "image": "/images/totem-corporate.webp",
+        "image": "/images/totemultimedia.webp",
         "role": "Frontend Developer",
         "period": "2026",
         "summary": "I contributed to the redesign and prototyping of Totem Multimedia's corporate website.",
@@ -281,7 +282,7 @@
         "estado": "completed",
         "title": "APROH PERÚ 2026 Event Website",
         "company": "APROH PERÚ",
-        "image": "/images/aproh-peru.webp",
+        "image": "/images/aprohperu.webp",
         "role": "Frontend Developer",
         "period": "2026",
         "summary": "I contributed to the development of the landing page for the APROH PERÚ 2026 event.",
@@ -394,6 +395,7 @@
         "estado": "in-progress",
         "title": "E-commerce Under Construction",
         "company": "Personal project",
+        "image":"/images/leevon.webp",
         "role": "Developer",
         "period": "2026",
         "summary": "A personal e-commerce project currently in development.",
@@ -471,10 +473,19 @@
     "responseTime": "I usually reply within 24–48 hours."
   },
   "footer": {
-    "name": "Camila Andrea Rivera",
+    "name": "Camila A. Rivera",
     "role": "Frontend & Full Stack Developer",
     "navigation": "Navigation",
-    "social": "Social",
+    "social": "Social Media",
+    "navigationLinks": [
+      { "label": "Home", "href": "#home" },
+      { "label": "Projects", "href": "#projects" },
+      { "label": "Download CV", "href": "/cv/cv_camila_andrea_rivera.pdf", "download": true }
+    ],
+    "socialLinks": [
+      { "label": "GitHub", "href": "https://github.com/Daem91", "icon": "fa-brands fa-github" },
+      { "label": "Email", "href": "mailto:camila.arc91@gmail.com", "icon": "fa-solid fa-envelope" }
+    ],
     "rights": "© 2026 Camila Andrea Rivera. All rights reserved.",
     "madeWith": "Made with ☕, code and cats"
   }
