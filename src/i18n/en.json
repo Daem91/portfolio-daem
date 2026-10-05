@@ -112,18 +112,18 @@
       "ecommerce": "E-commerce",
       "mobile": "Mobile",
       "backend": "Backend / APIs",
-      "uiux": "UI/UX",
-      "client": "Client",
-      "personal": "Personal"
+      "ui/ux": "UI/UX",
+      "personal": "Personal",
+      "freelance": "Freelance",
+      "client": "Client"
     },
     "labels": {
       "viewProject": "View case study",
       "company": "Company / client",
       "role": "My role",
-      "year": "Year",
+      "period": "Period",
       "type": "Project type",
-      "problem": "The problem",
-      "solution": "The solution",
+      "overview": "Overview",
       "myRole": "My role and responsibilities",
       "features": "Key features",
       "gallery": "Gallery",
@@ -132,9 +132,278 @@
       "demo": "View demo",
       "repository": "View repository",
       "figma": "View Figma",
+      "inProgress": "In progress",
+      "visitLink": "Visit project",
       "close": "Close"
     },
-    "empty": "There are no projects in this category yet."
+    "empty": "There are no projects in this category yet.",
+    "items": [
+      {
+        "id": "kole",
+        "link": "https://kole.pe",
+        "estado": "completed",
+        "title": "Kole.pe Multipage Landing Page",
+        "company": "Kole.pe",
+        "image": "/images/kole-landing.webp",
+        "role": "Software Developer",
+        "period": "Apr. 2026 — Sep. 2026",
+        "summary": "I contributed to the design, development and support of the Kole.pe landing page.",
+        "responsibilities": [
+          "Development and maintenance of web interfaces.",
+          "Support and improvements to the digital product.",
+          "Collaboration on web features."
+        ],
+        "technologies": [
+          "React",
+          "TypeScript",
+          "Astro",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
+        "categories": ["client", "frontend", "ui/ux"],
+        "theme": "bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      },
+      {
+        "id": "kole-app",
+        "estado": "completed",
+        "title": "Kole.pe Web and Mobile App",
+        "company": "Kole.pe",
+        "image": "/images/kole-app.webp",
+        "role": "Software Developer",
+        "period": "Apr. 2026 — Sep. 2026",
+        "summary": "I contributed to the redesign of Kole.pe's web app and the design and prototyping of its mobile app.",
+        "categories": ["client", "frontend", "mobile", "ui/ux"],
+        "responsibilities": [
+          "Mobile design in light and dark modes.",
+          "Redesign of the administrator and student modules in the web app.",
+          "Prototyping the mobile app in Figma.",
+          "Responsive web design."
+        ],
+        "technologies": ["Svelte", "Figma", "Bootstrap", "CSS"],
+        "theme": "bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      },
+      {
+        "id": "corall-2",
+        "link": "https://corall-landing-prueba.netlify.app",
+        "estado": "completed",
+        "title": "CorAll Development and Research S.A.C. Landing Page",
+        "company": "CorAll Development and Research S.A.C.",
+        "image": "/images/corall-landing-2.webp",
+        "role": "Full Stack Developer — Web & Mobile",
+        "period": "2023",
+        "summary": "Redesign and development of the CorAll landing page for a Peruvian IT solutions company.",
+        "responsibilities": [
+          "Frontend development.",
+          "DNS and hosting migration from DigitalOcean to AWS.",
+          "Responsive design and landing page maintenance."
+        ],
+        "technologies": ["React", "Astro", "AWS", "Tailwind CSS", "Framer Motion"],
+        "categories": ["frontend", "backend", "client", "ui/ux"],
+        "theme": "bg-[radial-gradient(ellipse_at_30%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(201_166_107/0.32),rgb(110_30_43/0.16))]"
+      },
+      {
+        "id": "corall-3",
+        "link": "https://coralldar.com",
+        "estado": "completed",
+        "title": "CorAll Development and Research S.A.C. Corporate Website",
+        "company": "CorAll Development and Research S.A.C.",
+        "image": "/images/corall-corporate.webp",
+        "role": "Full Stack Developer — Web & Mobile",
+        "period": "2026",
+        "summary": "Redesign and development of CorAll's corporate website.",
+        "responsibilities": [
+          "Frontend development.",
+          "Creation of new sections and features.",
+          "Maintenance and optimization of the corporate website."
+        ],
+        "technologies": ["React", "Astro", "TypeScript", "Tailwind CSS", "Framer Motion", "Claude Code"],
+        "categories": ["frontend", "client"],
+        "theme": "bg-[radial-gradient(ellipse_at_30%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(201_166_107/0.32),rgb(110_30_43/0.16))]"
+      },
+      {
+        "id": "urban-tech",
+        "link": "https://urbantech.pe",
+        "estado": "completed",
+        "title": "Urban Tech Innovation Project Portfolio Website",
+        "company": "Urban Tech Innovation",
+        "image": "/images/urban-tech.webp",
+        "role": "Frontend Developer",
+        "period": "2025",
+        "summary": "Development of a website showcasing the project portfolio of Urban Tech Innovation, an architecture company.",
+        "categories": ["client", "frontend", "ui/ux"],
+        "responsibilities": [
+          "Frontend development.",
+          "Wireframe design in Figma.",
+          "Landing page design, prototyping and development.",
+          "Responsive design and landing page maintenance."
+        ],
+        "technologies": ["React", "Tailwind CSS", "TypeScript", "Framer Motion", "Prisma", "Neon DB", "Vercel"],
+        "theme": "bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      },
+      {
+        "id": "personal-portfolio",
+        "estado": "completed",
+        "title": "Personal Portfolio",
+        "company": "Camila Rivera",
+        "image": "/images/personal-portfolio.webp",
+        "role": "Frontend Developer",
+        "period": "2026",
+        "summary": "I built my personal portfolio to showcase my projects, experience and technical skills.",
+        "categories": ["personal", "frontend"],
+        "responsibilities": [
+          "Frontend development.",
+          "Responsive web design."
+        ],
+        "technologies": ["Astro", "React", "Tailwind CSS", "Framer Motion", "Github Copilot", "TypeScript"],
+        "theme": "bg-[radial-gradient(ellipse_at_30%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(201_166_107/0.32),rgb(110_30_43/0.16))]"
+      },
+      {
+        "id": "totem-multimedia",
+        "link": "https://www.totemmultimedia.com",
+        "estado": "completed",
+        "title": "Totem Multimedia Corporate Website",
+        "company": "Totem Multimedia",
+        "image": "/images/totem-corporate.webp",
+        "role": "Frontend Developer",
+        "period": "2026",
+        "summary": "I contributed to the redesign and prototyping of Totem Multimedia's corporate website.",
+        "categories": ["client", "frontend", "ui/ux"],
+        "responsibilities": [
+          "Frontend development.",
+          "Responsive web design.",
+          "Creation of new sections and features."
+        ],
+        "technologies": ["React", "Tailwind CSS", "TypeScript", "Framer Motion", "Figma", "Astro"],
+        "theme": "bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      },
+      {
+        "id": "aproh-peru",
+        "estado": "completed",
+        "title": "APROH PERÚ 2026 Event Website",
+        "company": "APROH PERÚ",
+        "image": "/images/aproh-peru.webp",
+        "role": "Frontend Developer",
+        "period": "2026",
+        "summary": "I contributed to the development of the landing page for the APROH PERÚ 2026 event.",
+        "categories": ["client", "frontend"],
+        "responsibilities": [
+          "Frontend development based on the provided mockup.",
+          "Responsive web design.",
+          "Website maintenance and optimization."
+        ],
+        "technologies": ["WordPress", "Elementor", "Figma"],
+        "theme": "bg-[radial-gradient(ellipse_at_30%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(201_166_107/0.32),rgb(110_30_43/0.16))]"
+      },
+      {
+        "id": "ccae",
+        "link": "https://ccaeccll.org.pe",
+        "estado": "completed",
+        "title": "CCAE CCLL Corporate Website",
+        "company": "Centro de Conciliación y Arbitraje Empresarial de la Cámara de Comercio de La Libertad",
+        "image": "/images/ccae.webp",
+        "role": "Frontend Developer",
+        "period": "2025 — 2026",
+        "summary": "I contributed to the design, development and ongoing support of the CCAE CCLL corporate website.",
+        "categories": ["client", "frontend", "ui/ux"],
+        "responsibilities": [
+          "Frontend development.",
+          "Responsive web design.",
+          "Prototyping the web app in Figma.",
+          "Maintenance and optimization of the corporate website.",
+          "Collaboration on and development of features in Strapi."
+        ],
+        "technologies": ["React", "Tailwind CSS", "TypeScript", "Framer Motion", "Figma", "Astro", "Strapi"],
+        "theme": "bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      },
+      {
+        "id": "autoalert",
+        "link": "https://play.google.com/store/apps/details?id=com.corall.autoalertpro&hl=es_PE",
+        "estado": "completed",
+        "title": "AutoAlertPRO Mobile App",
+        "company": "Auto Tech S.A.C.",
+        "image": "/images/autoalert.webp",
+        "role": "Mobile Developer",
+        "period": "2025 — 2026",
+        "summary": "I contributed to the design, development and release of AutoAlertPRO, a mobile solution for managing vehicle maintenance.",
+        "categories": ["client", "mobile", "ui/ux"],
+        "responsibilities": [
+          "Mobile development.",
+          "Mobile design and prototyping in Figma.",
+          "Testing the mobile app in real vehicles.",
+          "Mobile app maintenance and optimization.",
+          "Publishing the mobile app on Google Play."
+        ],
+        "technologies": ["Flutter", "Dart", "Figma", "Firebase", "Google Play Console"],
+        "theme": "bg-[radial-gradient(ellipse_at_30%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(201_166_107/0.32),rgb(110_30_43/0.16))]"
+      },
+      {
+        "id": "medicsalud",
+        "estado": "completed",
+        "title": "MedicSalud Multipage Landing Page",
+        "company": "Raza Creativa",
+        "image": "/images/medicsalud.webp",
+        "role": "Frontend Developer",
+        "period": "2026",
+        "summary": "I contributed to the design and development of MedicSalud's multipage landing site, for a company providing corporate healthcare services.",
+        "categories": ["freelancer", "frontend", "ui/ux"],
+        "responsibilities": [
+          "Frontend development.",
+          "Responsive web design.",
+          "Prototype design in Figma."
+        ],
+        "technologies": ["React", "Tailwind CSS", "TypeScript", "Framer Motion", "Figma"],
+        "theme": "bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      },
+      {
+        "id": "chimu",
+        "estado": "completed",
+        "title": "Chimú Tablet App",
+        "company": "Chimú Agropecuaria",
+        "image": "/images/chimu.webp",
+        "role": "Mobile Developer",
+        "period": "2023 — 2024",
+        "summary": "I contributed to the design and development of the Chimú tablet app for weighing poultry houses, birds and eggs.",
+        "categories": ["mobile", "client", "ui/ux"],
+        "responsibilities": [
+          "Mobile app development and maintenance.",
+          "Wireframe design in Figma.",
+          "Collaboration on and development of new updates."
+        ],
+        "technologies": ["Kotlin Android", "Figma", "SQLite"],
+        "theme": "bg-[radial-gradient(ellipse_at_30%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(201_166_107/0.32),rgb(110_30_43/0.16))]"
+      },
+      {
+        "id": "geoatacama",
+        "estado": "completed",
+        "title": "Geoatacama NFC Scale App",
+        "company": "Geoatacama Consultores",
+        "image": "/images/geoatacama.webp",
+        "period": "2024",
+        "responsibilities": [
+          "Prototype design in Figma.",
+          "Mobile app development and maintenance."
+        ],
+        "role": "Mobile Developer",
+        "summary": "I contributed to the design and development of the Geoatacama mobile app for reading and writing NFC records.",
+        "technologies": ["Kotlin Android", "SQLite", "NFC"],
+        "categories": ["mobile", "client", "ui/ux"],
+        "theme": "bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      },
+      {
+        "id": "leevon-ecommerce",
+        "estado": "in-progress",
+        "title": "E-commerce Under Construction",
+        "company": "Personal project",
+        "role": "Developer",
+        "period": "2026",
+        "summary": "A personal e-commerce project currently in development.",
+        "categories": ["ecommerce", "personal", "frontend"],
+        "responsibilities": [],
+        "technologies": [],
+        "icon": "fa-solid fa-cart-shopping",
+        "theme": "bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      }
+    ]
   },
   "education": {
     "title": "Education, certificates and CV",

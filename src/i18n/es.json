@@ -112,18 +112,18 @@
       "ecommerce": "E-commerce",
       "mobile": "Mobile",
       "backend": "Backend / APIs",
-      "uiux": "UI/UX",
-      "client": "Cliente",
-      "personal": "Personal"
+      "ui/ux": "UI/UX",
+      "personal": "Personal",
+      "freelance": "Freelance",
+      "client": "Cliente"
     },
     "labels": {
       "viewProject": "Ver caso completo",
       "company": "Empresa / cliente",
       "role": "Mi rol",
-      "year": "Año",
+      "period": "Periodo",
       "type": "Tipo de proyecto",
-      "problem": "El problema",
-      "solution": "La solución",
+      "overview": "Resumen",
       "myRole": "Mi rol y responsabilidades",
       "features": "Funcionalidades clave",
       "gallery": "Galería",
@@ -132,9 +132,362 @@
       "demo": "Ver demo",
       "repository": "Ver repositorio",
       "figma": "Ver Figma",
+      "inProgress": "En construcción",
+      "visitLink": "Visitar proyecto",
       "close": "Cerrar"
     },
-    "empty": "Todavía no hay proyectos en esta categoría."
+    "empty": "Todavía no tengo proyectos en esta categoría.",
+    "items": [
+      {
+        "id": "kole",
+        "link": "https://kole.pe",
+        "estado": "completed",
+        "title": "Landing Multipage Kole.pe",
+        "company": "Kole.pe",
+        "image": "/images/kole-landing.webp",
+        "role": "Desarrolladora de Software",
+        "period": "Abr. 2026 — Set. 2026",
+        "summary": "Participé en el diseño, desarrollo y soporte de la landing page de Kole.pe.",
+        "responsibilities": [
+          "Desarrollo y mantenimiento de interfaces web.",
+          "Soporte y mejoras del producto digital.",
+          "Colaboración en funcionalidades web."
+        ],
+        "technologies": [
+          "React",
+          "TypeScript",
+          "Astro",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
+        "categories": ["client", "frontend", "ui/ux"],
+        "theme": "bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      },
+      {
+        "id":"kole-app",
+        "estado": "completed",
+        "title":"Aplicación web y móvil Kole.pe",
+        "company":"Kole.pe",
+        "image":"/images/kole-app.webp",
+        "role": "Desarrolladora de Software",
+        "period":"Abr. 2026 — Set. 2026",
+        "summary":"Participé en el rediseño de la aplicación web y el diseño y prototipado de la aplicación móvil de Kole.pe",
+        "categories": ["client", "frontend", "mobile", "ui/ux"],
+        "responsibilities":[
+          "Diseño móvil en modo oscuro y claro",
+          "Rediseño de los módulos de administrador y alumno de la aplicación web",
+          "Prototipado de la aplicación móvil en Figma",
+          "Diseño web responsive"
+        ],
+        "technologies":[
+          "Svelte",
+          "Figma",
+          "Bootstrap",
+          "CSS"
+        ],
+        "theme":"bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      },
+      {
+        "id": "corall-2",
+        "link": "https://corall-landing-prueba.netlify.app",
+        "estado": "completed",
+        "title": "Landing Page CorAll Development and Research S.A.C.",
+        "company": "CorAll Development and Research S.A.C.",
+        "image": "/images/corall-landing-2.webp",
+        "role": "Desarrolladora Full Stack — Web & Mobile",
+        "period": "2023",
+        "summary": "Rediseño y desarrollo de la landing page de CorAll, una empresa peruana de soluciones TI.",
+        "responsibilities": [
+          "Desarrollo frontend",
+          "Migración de DNS y hosting de Digital Ocean a AWS",
+          "Diseño responsive y mantenimiento de la landing page"
+        ],
+        "technologies": [
+          "React",
+          "Astro",
+          "AWS",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
+        "categories": ["frontend", "backend", "client", "ui/ux"],
+        "theme": "bg-[radial-gradient(ellipse_at_30%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(201_166_107/0.32),rgb(110_30_43/0.16))]"
+      },
+      {
+        "id": "corall-3",
+        "link": "https://coralldar.com",
+        "estado": "completed",
+        "title": "Página Corporativa CorAll Development and Research S.A.C.",
+        "company": "CorAll Development and Research S.A.C.",
+        "image": "/images/corall-corporate.webp",
+        "role": "Desarrolladora Full Stack — Web & Mobile",
+        "period": "2026",
+        "summary": "Rediseño y desarrollo de la página corporativa de CorAll.",
+        "responsibilities": [
+          "Desarrollo frontend",
+          "Creación de nuevas secciones y funcionalidades",
+          "Mantenimiento y optimización de la página corporativa"
+        ],
+        "technologies": [
+          "React",
+          "Astro",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion",
+          "Claude Code"
+        ],
+        "categories": ["frontend", "client"],
+        "theme": "bg-[radial-gradient(ellipse_at_30%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(201_166_107/0.32),rgb(110_30_43/0.16))]"
+      },
+      {
+        "id":"urban-tech",
+        "link": "https://urbantech.pe",
+        "estado": "completed",
+        "title":"Página Web de Portafolio de Proyectos Urban Tech Innovation",
+        "company":"Urban Tech Innovation",
+        "image":"/images/urban-tech.webp",
+        "role":"Desarrolladora Frontend",
+        "period":"2025",
+        "summary":"Desarrollo de una página web para mostrar el portafolio de proyectos de Urban Tech Innovation, una empresa de arquitectura.",
+        "categories":["client","frontend","ui/ux"],
+        "responsibilities":[
+          "Desarrollo frontend",
+          "Diseño de wireframes en figma",
+          "Diseño, prototipado y desarrollo de lading page",
+          "Diseño responsive y mantenimiento de la landing page"
+        ],
+        "technologies":[
+          "React",
+          "Tailwind CSS",
+          "TypeScript",
+          "Framer Motion",
+          "Prisma",
+          "Neon DB",
+          "Vercel"
+        ],
+        "theme":"bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      },
+      {
+        "id":"personal-portfolio",
+        "estado": "completed",
+        "title":"Portafolio Personal",
+        "company":"Camila Rivera",
+        "image":"/images/personal-portfolio.webp",
+        "role":"Desarrolladora Frontend",
+        "period":"2026",
+        "summary":"Desarrollé mi portafolio personal para mostrar mis proyectos, experiencia y habilidades técnicas.",
+        "categories":["personal", "frontend"],
+        "responsibilities":[
+          "Desarrollo frontend",
+          "Diseño web responsive"
+        ],
+        "technologies":[
+          "Astro",
+          "React",
+          "Tailwind CSS",
+          "Framer Motion",
+          "Github Copilot",
+          "TypeScript"
+        ],
+        "theme":"bg-[radial-gradient(ellipse_at_30%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(201_166_107/0.32),rgb(110_30_43/0.16))]"
+      },
+      {
+        "id":"totem-multimedia",
+        "link": "https://www.totemmultimedia.com",
+        "estado": "completed",
+        "title":"Página Corporativa Totem Multimedia",
+        "company":"Totem Multimedia",
+        "image":"/images/totem-corporate.webp",
+        "role":"Desarrolladora Frontend",
+        "period":"2026",
+        "summary":"Participé en el rediseño y prototipado de la página corporativa de Totem Multimedia",
+        "categories":["client","frontend","ui/ux"],
+        "responsibilities":[
+          "Desarrollo frontend",
+          "Diseño web responsive",
+          "Creación de nuevas secciones y funcionalidades"
+        ],
+        "technologies":[
+          "React",
+          "Tailwind CSS",
+          "TypeScript",
+          "Framer Motion",
+          "Figma",
+          "Astro"
+        ],
+        "theme":"bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      },
+      {
+        "id":"aproh-peru",
+        "estado": "completed",
+        "title":"Página de Evento APROH PERÚ 2026",
+        "company":"APROH PERÚ",
+        "image":"/images/aproh-peru.webp",
+        "role":"Desarrolladora Frontend",
+        "period":"2026",
+        "summary":"Participé en el desarrollo de la landing page del evento APROH PERú 2026",
+        "categories":["client","frontend"],
+        "responsibilities":[
+          "Desarrollo frontend del mockup proporcionado",
+          "Diseño web responsive",
+          "Mantenimiento y optimización de la página web"
+        ],
+        "technologies":[
+          "WordPress",
+          "Elementor",
+          "Figma"
+        ],
+        "theme":"bg-[radial-gradient(ellipse_at_30%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(201_166_107/0.32),rgb(110_30_43/0.16))]"
+      },
+      {
+        "id":"ccae",
+        "link": "https://ccaeccll.org.pe",
+        "estado": "completed",
+        "title":"Página Corporativa CCAE CCLL",
+        "company":"Centro de Conciliación y Arbitraje Empresarial de la Cámara de Comercio de La Libertad",
+        "image":"/images/ccae.webp",
+        "role":"Desarrolladora Frontend",
+        "period":"2025 - 2026",
+        "summary":"Participé en el diseño, desarrollo y soporte constante de la página corporativa de CCAE CCLL.",
+        "categories":["client","frontend","ui/ux"],
+        "responsibilities":[
+          "Desarrollo frontend",
+          "Diseño web responsive",
+          "Prototipado de la aplicación web en Figma",
+          "Mantenimiento y optimización de la página corporativa",
+          "Colaboración y desarrollo de funcionalidades en Strapi"
+        ],
+        "technologies":[
+          "React",
+          "Tailwind CSS",
+          "TypeScript",
+          "Framer Motion",
+          "Figma",
+          "Astro",
+          "Strapi"
+        ],
+        "theme":"bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      },
+      {
+        "id":"autoalert",
+        "link": "https://play.google.com/store/apps/details?id=com.corall.autoalertpro&hl=es_PE",
+        "estado": "completed",
+        "title":"Aplicación móvil AutoAlertPRO",
+        "company":"Auto Tech S.A.C.",
+        "image":"/images/autoalert.webp",
+        "role":"Desarrolladora Mobile",
+        "period":"2025 - 2026",
+        "summary":"Participé en el diseño, desarrollo y publicación de la aplicación móvil AutoAlertPRO, una solución para la gestión del mantenimiento de vehículos.",
+        "categories":["client","mobile","ui/ux"],
+        "responsibilities":[
+          "Desarrollo móvil",
+          "Diseño móvil y prototipado en Figma",
+          "Testeo de la aplicación móvil en vehículos reales",
+          "Mantenimiento y optimización de la aplicación móvil",
+          "Publicación de la aplicación móvil en Google Play"
+        ],
+        "technologies":[
+          "Flutter",
+          "Dart",
+          "Figma",
+          "Firebase",
+          "Google Play Console"
+        ],
+        "theme":"bg-[radial-gradient(ellipse_at_30%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(201_166_107/0.32),rgb(110_30_43/0.16))]"
+      },
+      {
+        "id":"medicsalud",
+        "estado": "completed",
+        "title":"Landing Multipage MedicSalud",
+        "company":"Raza Creativa",
+        "image":"/images/medicsalud.webp",
+        "role":"Desarrolladora Frontend",
+        "period":"2026",
+        "summary":"Participé en el diseño y desarrollo de la landing multipage de MedicSalud, una empresa que ofrece servicios de salud a nivel corporativo.",
+        "categories":["freelancer","frontend","ui/ux"],
+        "responsibilities":[
+          "Desarrollo frontend",
+          "Diseño web responsive",
+          "Diseño de prototipos en Figma"
+        ],
+        "technologies":[
+          "React",
+          "Tailwind CSS",
+          "TypeScript",
+          "Framer Motion",
+          "Figma"
+        ],
+        "theme":"bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      },
+      {
+        "id":"chimu",
+        "estado": "completed",
+        "title":"Aplicación de Tablet Chimú",
+        "company":"Chimú Agropecuaria",
+        "image":"/images/chimu.webp",
+        "role":"Desarrolladora Mobile",
+        "period":"2023 - 2024",
+        "summary":"Participé en el diseño y desarrollo de la aplicación tablet Chimú para el pesaje de galpones de aves y huevos",
+        "categories":["mobile","client","ui/ux"],
+        "responsibilities":[
+          "Desarrollo móvil y mantenimiento de la aplicación.",
+          "Diseño de wireframes en Figma",
+          "Colaboración y desarrollo de nuevas actualizaciones"
+        ],
+        "technologies":[
+          "Kotlin Android",
+          "Figma",
+          "SQLite"
+        ],
+        "theme":"bg-[radial-gradient(ellipse_at_30%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(201_166_107/0.32),rgb(110_30_43/0.16))]"
+      }, {
+        "id":"geoatacama",
+        "estado": "completed",
+        "categories":["mobile","client","ui/ux"],
+        "company":"Geoatacama Consultores",
+        "image":"/images/geoatacama.webp",
+        "period":"2024",
+        "responsibilities":[
+          "Diseño de prototipos en Figma",
+          "Desarrollo móvil y mantenimiento de la aplicación."
+        ],
+        "role":"Desarrolladora Mobile",
+        "summary":"Participé en el diseño y desarrollo de la aplicación móvil Geoatacama de lectura y escritura de registros NFCs",
+        "technologies":[
+          "Kotlin Android",
+          "SQLite",
+          "NFC"
+        ],
+        "theme":"bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]",
+        "title":"App de Balanzas con NFC para Geoatacama"
+      },
+      {
+        "id": "leevon-ecommerce",
+        "estado": "in-progress",
+        "title": "Leevon E-commerce en construcción",
+        "company": "Proyecto personal",
+        "role": "Desarrolladora Full Stack",
+        "period": "2026",
+        "summary": "Proyecto personal de comercio electrónico de ropa masculina actualmente en desarrollo.",
+        "categories": ["ecommerce", "personal", "frontend", "backend","ui/ux"],
+        "responsibilities": [
+          "Desarrollo frontend y backend.",
+          "Diseño de prototipos en Figma",
+          "Diseño web responsive"
+        ],
+        "technologies": [
+          "Astro",
+          "Fastify",
+          "Docker",
+          "Prisma",
+          "PostgreSQL",
+          "TypeScript",
+          "Claude Code",
+          "Figma"
+        ],
+        "icon": "fa-solid fa-cart-shopping",
+        "theme": "bg-[radial-gradient(ellipse_at_70%_25%,rgb(255_255_255/0.8),transparent_32%),linear-gradient(135deg,rgb(193_94_111/0.30),rgb(201_166_107/0.28))]"
+      }
+    ]
   },
   "education": {
     "title": "Educación, certificados y CV",
@@ -199,14 +552,14 @@
       "copyEmail": "Copiar email",
       "copied": "¡Email copiado!"
     },
-    "responseTime": "Normalmente respondo en 24–48 horas."
+    "responseTime": "Normalmente respondo en 12-24 horas."
   },
   "footer": {
     "name": "Camila Andrea Rivera",
     "role": "Frontend & Full Stack Developer",
     "navigation": "Navegación",
     "social": "Redes",
-    "rights": "© 2026 Camila Andrea Rivera. Todos los derechos reservados.",
+    "rights": "© 2026 Camila Rivera. Todos los derechos reservados.",
     "madeWith": "Hecho con ☕, código y gatos"
   }
 }
