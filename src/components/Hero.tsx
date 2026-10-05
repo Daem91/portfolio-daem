@@ -64,7 +64,7 @@ export function Hero({ messages }: { messages: HeroMessages }) {
                 <i className="fa-solid fa-arrow-right text-xs" aria-hidden="true" />
               </a>
               <a
-                href="/cv/cv_camila_andrea_rivera.pdf"
+                href="/cv/camila_rivera_CV.pdf"
                 download
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface/75 px-6 py-3 text-sm font-semibold text-text shadow-sm backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/30 hover:bg-surface hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
               >

@@ -564,7 +564,7 @@
     "navigationLinks": [
       { "label": "Inicio", "href": "#home" },
       { "label": "Proyectos", "href": "#projects" },
-      { "label": "Descargar CV", "href": "/cv/cv_camila_andrea_rivera.pdf", "download": true }
+      { "label": "Descargar CV", "href": "/cv/camila_rivera_CV", "download": true }
     ],
     "socialLinks": [
       { "label": "GitHub", "href": "https://github.com/Daem91", "icon": "fa-brands fa-github" },
