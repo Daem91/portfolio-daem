@@ -173,55 +173,18 @@ export function Projects({ messages }: { messages: ProjectMessages }) {
                       type="button"
                       onClick={() => setSelectedProject(project)}
                       aria-label={`${messages.labels.viewProject}: ${project.title}`}
-                      className="group flex h-full w-full cursor-pointer flex-col items-stretch justify-start appearance-none overflow-hidden rounded-card border border-border bg-surface p-0 text-left shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-accent/20 hover:shadow-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                      className="group flex h-full w-full cursor-pointer flex-col items-stretch justify-between appearance-none overflow-hidden rounded-card border border-border bg-surface p-0 text-left shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-accent/20 hover:shadow-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
                     >
-                      <div
-                        aria-hidden="true"
-                        className={`relative flex aspect-[1.55] w-full flex-none items-center justify-center overflow-hidden ${project.theme}`}
-                      >
-                        {project.image && !failedProjectImages.has(project.id) ? (
-                          <img
-                            ref={(image) => {
-                              if (image) projectImageRefs.current.set(project.id, image);
-                              else projectImageRefs.current.delete(project.id);
-                            }}
-                            src={project.image}
-                            alt=""
-                            onError={() => setFailedProjectImages((failed) => new Set(failed).add(project.id))}
-                            className="absolute inset-4 h-[calc(100%-2rem)] w-[calc(100%-2rem)] rounded-2xl border border-white/40 bg-white/15 object-cover shadow-[inset_0_1px_0_rgb(255_255_255/0.4)] transition-transform duration-300 group-hover:scale-[1.03]"
-                          />
-                        ) : (
-                          <span className="flex h-20 w-20 items-center justify-center rounded-3xl border border-white/50 bg-white/55 text-4xl text-accent shadow-[0_12px_30px_rgb(31_27_27/0.12)] backdrop-blur-md">
-                            <i className={project.icon ?? "fa-solid fa-window-maximize"} />
-                          </span>
-                        )}
-                        {project.estado === "in-progress" && (
-                          <span className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/70 bg-surface/90 px-3 py-1.5 text-xs font-semibold text-text shadow-soft backdrop-blur">
-                            <span className="pulse-dot h-2 w-2 rounded-full bg-available" aria-hidden="true" />
-                            {messages.labels.inProgress}
-                          </span>
-                        )}
-                        <span className="absolute bottom-4 left-4 flex flex-wrap gap-1.5">
-                          {project.categories
-                            .map(normalizeCategory)
-                            .filter((category): category is ProjectCategory => category !== null)
-                            .map((category) => (
-                              <span
-                                key={category}
-                                className="rounded-full border border-white/50 bg-surface/75 px-3 py-1 text-xs font-semibold text-text backdrop-blur"
-                              >
-                                {messages.filters[category]}
-                              </span>
-                            ))}
-                        </span>
-                        <span className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-accent text-cream opacity-0 shadow-soft transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100 group-focus-visible:opacity-100">
-                          <i className="fa-solid fa-arrow-up-right-from-square text-xs" />
-                        </span>
-                      </div>
-
                       <div className="p-5 sm:p-6">
                         <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-text-secondary">{project.company}</p>
-                        <h3 className="text-xl font-bold tracking-tight text-text">{project.title}</h3>
+                        <h3 className="text-xl font-bold tracking-tight text-text">
+                          {project.title}{" "}
+                          {project.estado === "in-progress" && (
+                            <span className="inline-flex px-1.5">
+                              <span className="pulse-dot h-2 w-2 rounded-full bg-available" aria-hidden="true" />
+                            </span>
+                          )}
+                        </h3>
                         <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-text-secondary">{project.summary}</p>
                         {project.technologies.length > 0 && (
                           <ul aria-label={messages.labels.technologies} className="mt-5 flex flex-wrap gap-2">
@@ -240,7 +203,9 @@ export function Projects({ messages }: { messages: ProjectMessages }) {
                             )}
                           </ul>
                         )}
-                        <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent">
+                      </div>
+                      <div className="px-5 pb-5 sm:pb-6 sm:px-6 flex w-full justify-between">
+                        <span className="inline-flex items-center gap-2 text-sm font-semibold text-accent">
                           {messages.labels.viewProject}
                           <i className="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1" />
                         </span>
@@ -275,9 +240,7 @@ export function Projects({ messages }: { messages: ProjectMessages }) {
             aria-labelledby="project-dialog-title"
             className="relative max-h-[92svh] w-full max-w-4xl overflow-y-auto rounded-t-modal border border-border bg-background shadow-modal sm:rounded-modal"
           >
-            <div
-              className={`relative flex aspect-[2.2] min-h-40 items-center justify-center overflow-hidden sm:min-h-56 ${selectedProject.theme}`}
-            >
+            <div className={`relative flex aspect-[2.2] min-h-40 items-center justify-center overflow-hidden sm:min-h-56 ${selectedProject.theme}`}>
               {selectedProject.image && !failedProjectImages.has(selectedProject.id) ? (
                 <button
                   ref={imageTriggerRef}
@@ -420,11 +383,7 @@ export function Projects({ messages }: { messages: ProjectMessages }) {
             aria-label={`${messages.labels.viewFullImage}: ${expandedImage.alt}`}
             className="relative flex max-h-full max-w-full items-center justify-center"
           >
-            <img
-              src={expandedImage.src}
-              alt={expandedImage.alt}
-              className="max-h-[88svh] max-w-full rounded-lg object-contain shadow-modal"
-            />
+            <img src={expandedImage.src} alt={expandedImage.alt} className="max-h-[88svh] max-w-full rounded-lg object-contain shadow-modal" />
             <button
               ref={imageCloseButtonRef}
               type="button"
